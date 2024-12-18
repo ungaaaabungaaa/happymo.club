@@ -28,7 +28,9 @@ export default function Home() {
 
    <div className="min-h-min flex flex-col items-center justify-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_80%,#000_40%,#63e_80%)]">
       <div>
+        <div className="hidden lg:block lg:visible">
         <HeroScroll></HeroScroll>
+        </div>
         <div className="w-full p-6 flex justify-center items-center flex-col">
         <br></br>
         <Chip>Testimonails</Chip>

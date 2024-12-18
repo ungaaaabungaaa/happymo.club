@@ -51,14 +51,14 @@ export default function App() {
       <NavbarContent className="sm:hidden pr-3 cursor-pointer" justify="center">
         <NavbarBrand onClick={navigateToHome} style={{ cursor: 'pointer' }}>
           <AcmeLogo />
-          <p className="font-bold text-purple-x text-inherit text-2xl lg:text-4xl">HappyMo</p>
+          <p className="font-bold text-purple-x text-inherit">HappyMo</p>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4 cursor-pointer justify-center items-center flex-grow" justify="center">
         <NavbarBrand onClick={navigateToHome} style={{ cursor: 'pointer' }}>
           <AcmeLogo />
-          <p className="font-bold text-purple-x text-2xl text-inherit">HappyMo</p>
+          <p className="font-bold text-purple-x md:text-2xl text-inherit">HappyMo</p>
         </NavbarBrand>
         <div className="flex justify-center items-center flex-grow gap-3">
           {menuItems.map((item, index) => (
