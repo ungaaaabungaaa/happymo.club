@@ -2,6 +2,7 @@ import React from 'react'
 import ChipChallenge from '../components/chip3'
 import { Button } from '@nextui-org/button'
 import { Icon } from 'lucide-react'
+import BentoGrid from '../dashboardcomponents/bentogrid'
 
 function Challenge() {
   return (
@@ -20,11 +21,12 @@ function Challenge() {
           <p className="text-center text-white font-normal leading-7 text-default-500 sm:w-[466px] sm:text-[18px]">
             We Our Daily Progress Here Track Our Trades , Copy Trades With Us & Win Daily!!!.
           </p>
-         
         </section>
+        <br></br>
       </main>
-
     </div>
+    <BentoGrid></BentoGrid>
+    
   </div>
   )
 }
