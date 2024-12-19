@@ -1,18 +1,18 @@
-'use client'
-
+'use client';
+import React from "react";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { PieChart, Pie, Cell, ResponsiveContainer, Label } from "recharts"
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
+} from "@/components/ui/card";
+import { PieChart, Pie, Cell, ResponsiveContainer, Label } from "recharts";
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 
 const calculateCompoundData = (initialAmount: number, days: number, dailyRate: number) => {
   let currentAmount = initialAmount;
   for (let day = 1; day <= days; day++) {
-    currentAmount *= (1 + dailyRate);
+    currentAmount *= 1 + dailyRate;
   }
   return Math.round(currentAmount);
 };
@@ -26,11 +26,11 @@ export default function ProgressCard() {
   const percentageAchieved = ((currentAmount / targetAmount) * 100).toFixed(1);
 
   const data = [
-    { name: 'Achieved', value: currentAmount },
-    { name: 'Remaining', value: remainingAmount },
+    { name: "Achieved", value: currentAmount },
+    { name: "Remaining", value: remainingAmount },
   ];
 
-  const COLORS = ['#4ade80', '#1f2937'];
+  const COLORS = ["#4ade80", "#1f2937"];
 
   const chartConfig = {
     achieved: {
@@ -41,7 +41,7 @@ export default function ProgressCard() {
       label: "Remaining",
       color: "hsl(var(--chart-2))",
     },
-  }
+  };
 
   return (
     <div className="h-full w-full">
@@ -55,9 +55,7 @@ export default function ProgressCard() {
               ${targetAmount.toLocaleString()}/
               <span className="text-green-500">${currentAmount.toLocaleString()}</span>
             </h2>
-            <p className="text-sm text-gray-400">
-              {percentageAchieved}% of target achieved
-            </p>
+            <p className="text-sm text-gray-400">{percentageAchieved}% of target achieved</p>
             <div className="flex-grow flex items-center justify-center mt-4">
               <ChartContainer config={chartConfig} className="h-[200px] w-full">
                 <ResponsiveContainer width="100%" height="100%">
@@ -77,8 +75,9 @@ export default function ProgressCard() {
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                       ))}
                       <Label
-                        content={({ viewBox }) => {
-                          const { cx, cy } = viewBox;
+                        content={(props: any) => {
+                          const { viewBox } = props;
+                          const { cx, cy } = viewBox || { cx: 0, cy: 0 };
                           return (
                             <g>
                               <text
@@ -113,6 +112,5 @@ export default function ProgressCard() {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
-
