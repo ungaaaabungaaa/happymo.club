@@ -29,7 +29,7 @@ const calculateCompoundData = (initialAmount: number, days: number, dailyRate: n
   return data;
 };
 
-const chartData = calculateCompoundData(50000, 23, 0.02);
+const chartData = calculateCompoundData(50000, 23, 0.01);
 
 const chartConfig = {
   amount: {
