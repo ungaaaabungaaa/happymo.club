@@ -84,7 +84,7 @@ export default function TeamMembersCard() {
     <div className="h-full w-full">
       <Card className="bg-black text-white rounded-2xl overflow-hidden h-full">
         <CardHeader className="pb-2">
-          <h2 className="text-2xl font-semibold">Followes</h2>
+          <h2 className="text-2xl font-semibold">Followers</h2>
           <p className="text-sm text-gray-400">
             Stability Index 4.0/5.0
           </p>

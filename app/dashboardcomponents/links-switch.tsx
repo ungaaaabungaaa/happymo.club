@@ -51,7 +51,7 @@ export default function LinkCard() {
                     </CardDescription>
                   </CardHeader>
                   <CardFooter>
-                    <Button className="bg-white text-black">Start Now ByBit</Button>
+                    <Button className="bg-signup-button">Start Now ByBit</Button>
                   </CardFooter>
                 </Card>
               </TabsContent>
@@ -69,7 +69,7 @@ export default function LinkCard() {
                     </CardDescription>
                   </CardHeader>
                   <CardFooter>
-                    <Button className="bg-white text-black">Start Now Binance</Button>
+                    <Button className="bg-signup-button">Start Now Binance</Button>
                   </CardFooter>
                 </Card>
               </TabsContent>
