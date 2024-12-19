@@ -64,6 +64,18 @@ const teamMembers: TeamMember[] = [
     email: "Has Followed For 9 Days",
     role: "ByBit",
     avatar: "https://avatar.iran.liara.run/public/20"
+  },
+  {
+    name: "Shaym Shindia",
+    email: "Has Followed For 6 Days",
+    role: "ByBit",
+    avatar: "https://avatar.iran.liara.run/public/46"
+  },
+  {
+    name: "Shoaiba Mohammed",
+    email: "Has Followed For 9 Days",
+    role: "ByBit",
+    avatar: "https://avatar.iran.liara.run/public/20"
   }
 ]
 
@@ -82,15 +94,15 @@ function AnimatedMemberList({ className }: { className?: string }) {
 export default function TeamMembersCard() {
   return (
     <div className="h-full w-full">
-      <Card className="bg-black text-white rounded-2xl overflow-hidden h-full">
+      <Card className="bg-black text-white rounded-2xl h-full overflow-hidden">
         <CardHeader className="pb-2">
-          <h2 className="text-2xl font-semibold">Followers</h2>
+          <h2 className="text-2xl font-semibold">Followes</h2>
           <p className="text-sm text-gray-400">
             Stability Index 4.0/5.0
           </p>
         </CardHeader>
-        <CardContent className="flex flex-col h-[calc(100%-4rem)]">
-          <div className="flex flex-col flex-grow -mx-2">
+        <CardContent className="flex flex-col align-middle justify-center h-[calc(100%-4rem)]">
+          <div className="flex flex-col align-middle justify-center flex-grow -mx-2">
             <AnimatedMemberList />
           </div>
         </CardContent>
