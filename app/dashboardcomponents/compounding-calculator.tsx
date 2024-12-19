@@ -98,13 +98,13 @@ export default function CompoundingCalculator() {
               
             </div>
             <div>
-              <label className="text-gray-400">Total Profit</label>
+              <p className='text-gray-400 text-2xl'>Total Profit</p>
               <p className="text-xl font-semibold text-green-400">
                 ${totalProfit.toLocaleString()}
               </p>
             </div>
             <div>
-              <label className="text-gray-400">ROI</label>
+            <p className='text-gray-400 text-2xl'>ROI</p>
               <p className="text-xl font-semibold text-green-400">{roi}%</p>
             </div>
           </div>
