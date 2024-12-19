@@ -83,7 +83,7 @@ export default function CompoundingCalculator() {
           </div>
             <div>
               <label htmlFor="days-slider" className="text-gray-400">
-                Number of Days
+                Number of Days" </label>
              
               <Slider
                 id="days-slider"
@@ -95,7 +95,7 @@ export default function CompoundingCalculator() {
                 onChange={handleDaysChange}
                 className="max-w-md pt-2"
               />
-               </label>
+              
             </div>
             <div>
               <label className="text-gray-400">Total Profit</label>
