@@ -2,6 +2,7 @@ import React from 'react';
 import RevenueCard from './revenue-card';
 import DaysCard from './days-card';
 import ProgressCard from './progress-card';
+import TargetCard from './target-card';
 
 const BentoGrid = () => {
   return (
@@ -40,12 +41,12 @@ const BentoGrid = () => {
         </div>
 
         <div 
-          className="bg-red-400 rounded-lg flex items-center justify-center
+          className="rounded-lg flex items-center justify-center
             col-span-1 row-span-1
             sm:col-span-1 sm:row-span-2
             lg:col-span-1 lg:row-span-3"
         >
-          <p>Pork</p>
+          <TargetCard></TargetCard>
         </div>
 
         <div 
