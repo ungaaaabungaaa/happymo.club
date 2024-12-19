@@ -64,12 +64,6 @@ const teamMembers: TeamMember[] = [
     email: "Has Followed For 9 Days",
     role: "ByBit",
     avatar: "https://avatar.iran.liara.run/public/20"
-  },
-  {
-    name: "Jonas ",
-    email: "Has Followed For 21 Days",
-    role: "ByBit",
-    avatar: "https://avatar.iran.liara.run/public/26"
   }
 ]
 
