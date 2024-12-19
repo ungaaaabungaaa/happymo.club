@@ -7,10 +7,24 @@ import AIChip from "./components/chip";
 import { HeroScroll } from "./components/heroscroll";
 import { Chip } from "@nextui-org/chip";
 import { Test_Demo } from "./components/test_demo";
+import Head from 'next/head';
 
 export default function Home() {
   return (
     <>
+
+        <Head>
+        <title>HomePage</title>
+        <meta name="description" content="Single Click Copy Trading 40x Challenge 1% Daily Profits" />
+        <meta name="keywords" content="copy trading, automated trading, trading signals, investment strategy, forex copy trading, stock copy trading" />
+        <meta property="og:title" content="Home" />
+        <meta property="og:description" content="HomePAge" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="HappyMo"/>
+        <meta name="twitter:description" content="Copy Trading Club" />
+        <link rel="canonical" href="https://happymo.club" />
+      </Head>
       <div className="min-h-min flex flex-col items-center justify-center px-2 pt-28 pb-28 [background:radial-gradient(125%_125%_at_50%_20%,#000_40%,#63e_80%)]">
       <div className="flex flex-col items-center justify-center">
        <AIChip></AIChip>
