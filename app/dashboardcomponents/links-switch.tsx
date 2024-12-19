@@ -17,7 +17,16 @@ export default function LinkCard() {
     <div className="h-full w-full">
       <Card  className="bg-black text-white rounded-2xl overflow-hidden h-full">
         <CardHeader className="pb-2">
-          <CardTitle className="text-gray-200 text-sm font-normal">Start Now</CardTitle>
+          <CardTitle className="text-gray-200 text-sm font-normal">
+
+          <h2 className="text-2xl font-semibold">Start Now</h2>
+          <p className="text-sm text-gray-400">
+            Why Lose One Day When you Can Make 1% a Day Profit!
+          </p>
+
+
+
+          </CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col h-[calc(100%-4rem)]">
           <div className="flex flex-col flex-grow space-y-1">
