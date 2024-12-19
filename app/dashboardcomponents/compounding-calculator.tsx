@@ -81,22 +81,7 @@ export default function CompoundingCalculator() {
               className="max-w-md pt-2"
             />
           </div>
-            <div>
-              <label htmlFor="days-slider" className="text-gray-400">
-                Number of Days </label>
-             
-              <Slider
-                id="days-slider"
-                step={1}
-                maxValue={365}
-                minValue={1}
-                defaultValue={365}
-                value={days}
-                onChange={handleDaysChange}
-                className="max-w-md pt-2"
-              />
-              
-            </div>
+           
             <div>
               <p className='text-gray-400 text-2xl'>Total Profit</p>
               <p className="text-xl font-semibold text-green-400">
