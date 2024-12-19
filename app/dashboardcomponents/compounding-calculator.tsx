@@ -19,7 +19,7 @@ export default function CompoundingCalculator() {
     for (let day = 0; day <= currentDays; day++) {
       data.push({
         day,
-        amount: parseFloat(currentAmount.toFixed(2))
+        amount: parseFloat(currentAmount.toFixed(2)),
       })
       currentAmount *= 1.01 // 1% daily increase
     }
@@ -36,7 +36,7 @@ export default function CompoundingCalculator() {
 
   return (
     <div className="h-full w-full p-4">
-      <Card className="bg-black text-white rounded-2xl overflow-hidden h-full  pt-12 pb-12">
+      <Card className="bg-black text-white rounded-2xl overflow-hidden h-full pt-12 pb-12">
         <CardHeader className="pb-2">
           <div className="flex justify-between items-start">
             <div>
@@ -45,14 +45,18 @@ export default function CompoundingCalculator() {
             </div>
             <div className="text-right">
               <p className="text-sm text-gray-400">Final Amount</p>
-              <p className="text-2xl font-bold text-green-400">${finalAmount.toLocaleString()}</p>
+              <p className="text-2xl font-bold text-green-400">
+                ${finalAmount.toLocaleString()}
+              </p>
             </div>
           </div>
         </CardHeader>
         <CardContent className="flex flex-col md:flex-row gap-6">
           <div className="w-full md:w-1/3 space-y-6">
             <div>
-              <label htmlFor="initial" className="text-gray-400">Initial Investment</label>
+              <label htmlFor="initial" className="text-gray-400">
+                Initial Investment
+              </label>
               <Input
                 id="initial"
                 type="number"
@@ -63,10 +67,11 @@ export default function CompoundingCalculator() {
               />
             </div>
             <div>
-              
+              <label htmlFor="days-slider" className="text-gray-400">
+                Number of Days
+              </label>
               <Slider
-                id="days"
-                label="Number of Days"
+                id="days-slider"
                 step={1}
                 maxValue={365}
                 minValue={1}
@@ -78,7 +83,9 @@ export default function CompoundingCalculator() {
             </div>
             <div>
               <label className="text-gray-400">Total Profit</label>
-              <p className="text-xl font-semibold text-green-400">${totalProfit.toLocaleString()}</p>
+              <p className="text-xl font-semibold text-green-400">
+                ${totalProfit.toLocaleString()}
+              </p>
             </div>
             <div>
               <label className="text-gray-400">ROI</label>
@@ -96,7 +103,10 @@ export default function CompoundingCalculator() {
               }}
             >
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={calculateCompounding} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+                <LineChart
+                  data={calculateCompounding}
+                  margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+                >
                   <CartesianGrid strokeDasharray="3 3" stroke="#333" />
                   <XAxis
                     dataKey="day"
@@ -110,7 +120,7 @@ export default function CompoundingCalculator() {
                   <Tooltip
                     content={({ active, payload }) => {
                       if (active && payload && payload.length) {
-                        const amount = Number(payload[0].value); // Ensure it's a number
+                        const amount = Number(payload[0].value)
                         return (
                           <div className="bg-gray-900 border border-gray-800 p-2 rounded-lg">
                             <p className="text-gray-400">Day {payload[0].payload.day}</p>
