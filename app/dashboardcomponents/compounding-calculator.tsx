@@ -53,23 +53,23 @@ export default function CompoundingCalculator() {
         </CardHeader>
         <CardContent className="flex flex-col md:flex-row gap-6">
           <div className="w-full md:w-1/3 space-y-6">
-            <div>
-              <label htmlFor="initial" className="text-gray-400">
+            <div className='bg-black'>
+              <label htmlFor="initial" className=" text-white ">
                 Initial Investment
-              </label>
               <Input
                 id="initial"
                 type="number"
                 min={500}
                 value={initialAmount}
                 onChange={(e) => setInitialAmount(Math.max(500, Number(e.target.value)))}
-                className="bg-white text-black rounded-md"
+                className="bg-black text-white rounded-md pt-2"
               />
+              </label>
             </div>
             <div>
               <label htmlFor="days-slider" className="text-gray-400">
                 Number of Days
-              </label>
+             
               <Slider
                 id="days-slider"
                 step={1}
@@ -78,8 +78,9 @@ export default function CompoundingCalculator() {
                 defaultValue={365}
                 value={days}
                 onChange={handleDaysChange}
-                className="max-w-md"
+                className="max-w-md pt-2"
               />
+               </label>
             </div>
             <div>
               <label className="text-gray-400">Total Profit</label>
