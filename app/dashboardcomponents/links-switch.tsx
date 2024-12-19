@@ -25,7 +25,7 @@ export default function LinkCard() {
             <div className="flex-grow mt-4">
 
             <Tabs defaultValue="account" className="w-[400px] bg-black text-white">
-              <TabsList className="grid w-full grid-cols-2 bg-black text-white">
+              <TabsList className="grid w-full grid-cols-2 bg-black text-white pt-4 pb-4">
                 <TabsTrigger value="account">ByBit</TabsTrigger>
                 <TabsTrigger value="password">Bynance</TabsTrigger>
               </TabsList>
@@ -38,7 +38,7 @@ export default function LinkCard() {
                     </CardDescription>
                   </CardHeader>
                   <CardFooter>
-                    <Button>Start Now ByBit</Button>
+                    <Button className="bg-white text-black">Start Now ByBit</Button>
                   </CardFooter>
                 </Card>
               </TabsContent>
@@ -51,7 +51,7 @@ export default function LinkCard() {
                     </CardDescription>
                   </CardHeader>
                   <CardFooter>
-                    <Button>Start Now Binance</Button>
+                    <Button className="bg-white text-black">Start Now Binance</Button>
                   </CardFooter>
                 </Card>
               </TabsContent>
