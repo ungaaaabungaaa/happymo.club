@@ -18,7 +18,7 @@ function Challenge() {
               1% Profit EveryDay <br /> 40X Challenge.
             </div>
           </div>
-          <p className="text-center text-white font-normal leading-7 text-default-500 sm:w-[466px] sm:text-[18px]">
+          <p className="text-center text-white font-normal leading-7 text-default-500 sm:w-[466px] sm:text-[18px] ">
             We Our Daily Progress Here Track Our Trades , Copy Trades With Us & Win Daily!!!.
           </p>
         </section>

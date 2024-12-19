@@ -36,7 +36,7 @@ export default function LinkCard() {
             <Tabs defaultValue="account" className="w-[400px] bg-black text-white">
               <TabsList className="grid w-full grid-cols-2 bg-black text-white pt-4 pb-4">
                 <TabsTrigger value="account">ByBit</TabsTrigger>
-                <TabsTrigger value="password">Bynance</TabsTrigger>
+                <TabsTrigger value="password">Binance</TabsTrigger>
               </TabsList>
               <TabsContent value="account">
                 <Card className="bg-black text-white">
