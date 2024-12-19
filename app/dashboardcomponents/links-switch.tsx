@@ -34,7 +34,11 @@ export default function LinkCard() {
                   <CardHeader>
                     <CardTitle>40X Challenge</CardTitle>
                     <CardDescription>
-                     Start Copy Trading From a Single Click.
+                      <br></br>
+                      40x Challenge a copy trading plan where you aim for 1% profit every month, <br></br> with no fees or commissions
+                      <br></br>
+                      <br></br>
+                      Start Trading With one Click with partner with bybit
                     </CardDescription>
                   </CardHeader>
                   <CardFooter>
@@ -47,7 +51,12 @@ export default function LinkCard() {
                   <CardHeader>
                     <CardTitle>1% Daily Profits</CardTitle>
                     <CardDescription>
+                      <br></br>
+                      <br></br>
                       Start Copy Trading From a Single Click.
+                      <br></br>
+                      <br></br>
+                      Join the Path to Prosperity – 1% Growth a Day Keeps Poverty at Bay.
                     </CardDescription>
                   </CardHeader>
                   <CardFooter>
