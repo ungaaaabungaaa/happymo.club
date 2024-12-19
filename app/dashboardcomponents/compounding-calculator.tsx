@@ -83,7 +83,7 @@ export default function CompoundingCalculator() {
           </div>
             <div>
               <label htmlFor="days-slider" className="text-gray-400">
-                Number of Days" </label>
+                Number of Days </label>
              
               <Slider
                 id="days-slider"
