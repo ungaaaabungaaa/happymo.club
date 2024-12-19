@@ -21,10 +21,10 @@ export default function Terms() {
           <br></br>
           <p className='text-white'><strong className='text-purple-x '>Effective Date:</strong> [Nov 2024]</p>
           <br></br>
-          <p  className='text-white'>Welcome to <strong>XpertIndicator</strong>! By purchasing any product from our website, you agree to the following Terms and Conditions. Please read them carefully.</p>
+          <p  className='text-white'>Welcome to <strong>HappyMo.club</strong>! By purchasing any product from our website, you agree to the following Terms and Conditions. Please read them carefully.</p>
           <br></br>
           <h2  className='text-white text-2xl '>1. General Information</h2>
-          <p  className='text-white'>XpertIndicator provides trading indicators for use on <strong>TradingView</strong>, along with educational materials (such as books and YouTube videos) to help you use the indicators effectively and profitably. By accessing or purchasing our products, you agree to be bound by these terms.</p>
+          <p  className='text-white'>HappyMo.club provides trading indicators for use on <strong>TradingView</strong>, along with educational materials (such as books and YouTube videos) to help you use the indicators effectively and profitably. By accessing or purchasing our products, you agree to be bound by these terms.</p>
           <br></br>
           <h2  className='text-white text-2xl'>2. Purchase and Delivery</h2>
           <ul  className='text-white'>
@@ -46,31 +46,31 @@ export default function Terms() {
           <h2 className='text-2xl'>4. Usage Rights</h2>
           <ul>
             <li>Upon purchasing the indicator, you are granted a <strong>non-transferable, non-exclusive license</strong> to use the product for personal trading purposes on <strong>TradingView</strong>.</li>
-            <li>You may not resell, redistribute, or modify the product in any form without prior written consent from XpertIndicator.</li>
+            <li>You may not resell, redistribute, or modify the product in any form without prior written consent from HappyMo.club.</li>
           </ul>
           <br></br>
           <h2 className='text-2xl'>5. Intellectual Property</h2>
           <ul>
-            <li>All content provided by XpertIndicator, including but not limited to the trading indicators, books, educational videos, and website materials, is the intellectual property of <strong>XpertIndicator</strong>.</li>
+            <li>All content provided by HappyMo.club, including but not limited to the trading indicators, books, educational videos, and website materials, is the intellectual property of <strong>HappyMo.club</strong>.</li>
             <li>You may not use, reproduce, or distribute any of our intellectual property without explicit permission from the company.</li>
           </ul>
           <br></br>
           <h2 className='text-2xl'>6. Disclaimer</h2>
           <ul>
             <li><strong>No Guarantees of Profit:</strong> While our indicators are designed to provide insights and assist with trading decisions, there are no guarantees that using them will result in profits. Trading involves risk, and you should never trade with money you cannot afford to lose.</li>
-            <li><strong>No Liability:</strong> XpertIndicator is not liable for any losses, damages, or financial consequences resulting from the use of our products or educational materials. All trades are executed at your own risk.</li>
+            <li><strong>No Liability:</strong> HappyMo.club is not liable for any losses, damages, or financial consequences resulting from the use of our products or educational materials. All trades are executed at your own risk.</li>
           </ul>
           <br></br>
           <h2 className='text-2xl'>7. Support</h2>
           <p>If you have any questions or require support, please contact us at <strong>[Insert support email]</strong>. We strive to assist you as quickly as possible.</p>
           <br></br>
           <h2 className='text-2xl'>8. Amendments</h2>
-          <p>XpertIndicator reserves the right to modify these Terms and Conditions at any time. Any changes will be posted on this page with the updated date. It is your responsibility to review these Terms regularly.</p>
+          <p>HappyMo.club reserves the right to modify these Terms and Conditions at any time. Any changes will be posted on this page with the updated date. It is your responsibility to review these Terms regularly.</p>
           <br></br>
           <h2 className='text-2xl'>9. Governing Law</h2>
           <p>These Terms and Conditions are governed by the laws of <strong>[Insert your country/state]</strong>. Any disputes arising out of or in connection with these terms shall be resolved in the courts of <strong>[Insert location]</strong>.</p>
           <br></br>
-          <p>By purchasing from XpertIndicator, you acknowledge and agree to the terms outlined above.</p>
+          <p>By purchasing from HappyMo.club, you acknowledge and agree to the terms outlined above.</p>
           </div>
           <div>
         </div>
