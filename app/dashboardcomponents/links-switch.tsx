@@ -1,12 +1,67 @@
-import React from 'react'
 
-function LinkSwitchs() {
-   // bybit - Binance link switch with copy link buttons 
-    return (
-    <div>
-      
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Button } from "@nextui-org/button"
+
+export default function LinkCard() {
+  
+
+  return (
+    <div className="h-full w-full">
+      <Card  className="bg-black text-white rounded-2xl overflow-hidden h-full">
+        <CardHeader className="pb-2">
+          <CardTitle className="text-gray-200 text-sm font-normal">Start Now</CardTitle>
+        </CardHeader>
+        <CardContent className="flex flex-col h-[calc(100%-4rem)]">
+          <div className="flex flex-col flex-grow space-y-1">
+    
+            <div className="flex-grow mt-4">
+
+            <Tabs defaultValue="account" className="w-[400px]">
+              <TabsList className="grid w-full grid-cols-2">
+                <TabsTrigger value="account">ByBit</TabsTrigger>
+                <TabsTrigger value="password">Bynance</TabsTrigger>
+              </TabsList>
+              <TabsContent value="account">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>40X Challenge</CardTitle>
+                    <CardDescription>
+                     Start Copy Trading From a Single Click.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardFooter>
+                    <Button>Start Now ByBit</Button>
+                  </CardFooter>
+                </Card>
+              </TabsContent>
+              <TabsContent value="password">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>1% Daily Profits</CardTitle>
+                    <CardDescription>
+                      Start Copy Trading From a Single Click.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardFooter>
+                    <Button>Start Now Binance</Button>
+                  </CardFooter>
+                </Card>
+              </TabsContent>
+            </Tabs>
+
+            
+            </div>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   )
 }
-
-export default LinkSwitchs

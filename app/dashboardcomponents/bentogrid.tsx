@@ -5,6 +5,7 @@ import ProgressCard from './progress-card';
 import TargetCard from './target-card';
 import TeamMembersCard from './followers-card';
 import CompoudingCalculator from './compounding-calculator';
+import LinkCard from './links-switch';
 
 const BentoGrid = () => {
   return (
@@ -70,12 +71,12 @@ const BentoGrid = () => {
         </div>
 
         <div 
-          className="bg-gray-200 rounded-lg flex items-center justify-center
+          className=" rounded-lg flex items-center justify-center
             col-span-1 row-span-1
             sm:col-span-1 sm:row-span-2
             lg:col-span-1 lg:row-span-3"
         >
-          <p>Tofu</p>
+         <LinkCard></LinkCard>
         </div>
 
         <div 

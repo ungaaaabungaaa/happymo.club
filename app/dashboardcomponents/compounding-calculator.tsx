@@ -4,9 +4,13 @@
 import {
   Card,
   CardContent,
+  CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Button } from "@nextui-org/button"
 
 
 
@@ -27,7 +31,11 @@ export default function CompoudingCalculator() {
            
             <div className=" mt-4">
 
-            {/* Changed to use flex-grow */}
+
+
+           
+
+            
         
             </div>
           </div>
