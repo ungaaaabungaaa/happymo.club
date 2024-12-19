@@ -19,6 +19,7 @@
 		"@nextui-org/link": "2.2.3",
 		"@nextui-org/listbox": "2.3.3",
 		"@nextui-org/navbar": "2.2.3",
+		"@nextui-org/slider": "^2.4.5",
 		"@nextui-org/snippet": "2.2.4",
 		"@nextui-org/switch": "2.2.3",
 		"@nextui-org/system": "2.4.3",
