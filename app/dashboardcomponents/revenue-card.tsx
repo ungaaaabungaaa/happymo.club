@@ -1,29 +1,28 @@
 // revenue-card.tsx
-'use client'
-import { TrendingUp } from 'lucide-react'
-import { CartesianGrid, Line, LineChart, XAxis } from "recharts"
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+"use client";
+import { TrendingUp } from "lucide-react";
+import { CartesianGrid, Line, LineChart, XAxis } from "recharts";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/components/ui/chart"
+} from "@/components/ui/chart";
 
-const calculateCompoundData = (initialAmount: number, days: number, dailyRate: number) => {
+const calculateCompoundData = (
+  initialAmount: number,
+  days: number,
+  dailyRate: number
+) => {
   const data = [];
   let currentAmount = initialAmount;
-  
+
   for (let day = 1; day <= days; day++) {
     currentAmount = currentAmount * (1 + dailyRate);
     data.push({
       day: `Day ${day}`,
-      amount: Math.round(currentAmount)
+      amount: Math.round(currentAmount),
     });
   }
   return data;
@@ -36,26 +35,42 @@ const chartConfig = {
     label: "Amount",
     color: "hsl(0, 0%, 100%)",
   },
-} satisfies ChartConfig
+} satisfies ChartConfig;
 
 export default function RevenueCard() {
   const initialAmount = 50000;
   const finalAmount = chartData[chartData.length - 1].amount;
-  const percentageGain = ((finalAmount - initialAmount) / initialAmount * 100).toFixed(1);
+  const percentageGain = (
+    ((finalAmount - initialAmount) / initialAmount) *
+    100
+  ).toFixed(1);
 
   return (
-    <div className="h-full w-full"> {/* Changed this line */}
-      <Card className="bg-black text-white rounded-2xl overflow-hidden h-full"> {/* Added h-full */}
+    <div className="h-full w-full">
+      {" "}
+      {/* Changed this line */}
+      <Card className="bg-black text-white rounded-2xl overflow-hidden h-full">
+        {" "}
+        {/* Added h-full */}
         <CardHeader className="pb-2">
-          <CardTitle className="text-gray-200 text-sm font-normal">Invested Amount</CardTitle>
+          <CardTitle className="text-gray-200 text-sm font-normal">
+            Invested Amount
+          </CardTitle>
         </CardHeader>
-        <CardContent className="flex flex-col h-[calc(100%-4rem)]"> {/* Added flex and height calculation */}
+        <CardContent className="flex flex-col h-[calc(100%-4rem)]">
+          {" "}
+          {/* Added flex and height calculation */}
           <div className="flex flex-col flex-grow space-y-1">
-            <h2 className="text-3xl font-semibold">${finalAmount.toLocaleString()}</h2>
+            <h2 className="text-3xl font-semibold">
+              ${finalAmount.toLocaleString()}
+            </h2>
             <p className="text-sm text-gray-400">
-              <span className="text-green-500">+{percentageGain}%</span> from 23 Days
+              <span className="text-green-500">+{percentageGain}%</span> from 23
+              Days
             </p>
-            <div className=" mt-4"> {/* Changed to use flex-grow */}
+            <div className=" mt-4">
+              {" "}
+              {/* Changed to use flex-grow */}
               <ChartContainer config={chartConfig}>
                 <LineChart
                   data={chartData}
@@ -67,24 +82,35 @@ export default function RevenueCard() {
                   }}
                   height={200} // Added explicit height
                 >
-                  <CartesianGrid vertical={false} horizontal={false} />
-                  <XAxis 
-                    dataKey="day" 
-                    axisLine={false} 
-                    tickLine={false} 
-                    tick={false}
+                  {/* Enable light-colored grid lines */}
+                  <CartesianGrid
+                    vertical={false}
+                    horizontal={true}
+                    stroke="hsl(0, 0%, 30%)" // Grid lines with a subtle gray
+                  />
+                  <XAxis
+                    dataKey="day"
+                    axisLine={false}
+                    tickLine={false}
+                    tick={{
+                      fill: "hsl(0, 0%, 70%)", // Light gray for ticks
+                      fontSize: 10,
+                    }}
                   />
                   <ChartTooltip
-                    cursor={false}
+                    cursor={{
+                      stroke: "hsl(0, 0%, 50%)", // Tooltip cursor in gray
+                      strokeWidth: 1,
+                    }}
                     content={<ChartTooltipContent />}
                   />
                   <Line
                     type="monotone"
                     dataKey="amount"
-                    stroke="hsl(0, 0%, 100%)"
+                    stroke="hsl(120, 80%, 50%)" // Bright green line
                     strokeWidth={2}
                     dot={{
-                      fill: "hsl(0, 0%, 100%)",
+                      fill: "hsl(120, 80%, 50%)", // Bright green dots
                       r: 4,
                     }}
                     activeDot={{
@@ -98,5 +124,5 @@ export default function RevenueCard() {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
