@@ -1,24 +1,25 @@
-import React from 'react';
-import RevenueCard from './revenue-card';
-import DaysCard from './days-card';
-import ProgressCard from './progress-card';
-import TargetCard from './target-card';
-import TeamMembersCard from './followers-card';
-import CompoudingCalculator from './compounding-calculator';
-import LinkCard from './links-switch';
-import BlankCard from './blankcard';
-import TradesCard from './trades-table';
+import React from "react";
+import RevenueCard from "./revenue-card";
+import BlankCard2 from "./days-card";
+import ProgressCard from "./progress-card";
+import TargetCard from "./target-card";
+import TeamMembersCard from "./followers-card";
+import CompoudingCalculator from "./compounding-calculator";
+import LinkCard from "./links-switch";
+import BlankCard from "./blankcard";
+import TradesCard from "./trades-table";
 
 const BentoGrid = () => {
   return (
     <div className="flex min-h-screen w-full items-center justify-center p-4">
-      
-      <div className="grid h-full w-full gap-4 p-2 rounded-lg
+      <div
+        className="grid h-full w-full gap-4 p-2 rounded-lg
         grid-cols-1 grid-rows-none auto-rows-fr  /* Mobile: single column */
         sm:grid-cols-2                           /* Tablet: 2 columns */
         lg:grid-cols-4 lg:grid-rows-10          /* Desktop: 4 columns */
-        ">
-        <div 
+        "
+      >
+        <div
           className="rounded-lg
             col-span-1 row-span-1                /* Mobile */
             sm:col-span-1 sm:row-span-2         /* Tablet */
@@ -27,16 +28,16 @@ const BentoGrid = () => {
           <RevenueCard />
         </div>
 
-        <div 
+        <div
           className="rounded-lg flex items-center justify-center
             col-span-1 row-span-1
             sm:col-span-1 sm:row-span-2
             lg:col-span-1 lg:row-span-3"
         >
-          <DaysCard />
+          <BlankCard2 />
         </div>
 
-        <div 
+        <div
           className="rounded-lg flex items-center justify-center
             col-span-1 row-span-1
             sm:col-span-2 sm:row-span-2
@@ -45,7 +46,7 @@ const BentoGrid = () => {
           <ProgressCard />
         </div>
 
-        <div 
+        <div
           className="rounded-lg flex items-center justify-center
             col-span-1 row-span-1
             sm:col-span-1 sm:row-span-2
@@ -54,7 +55,7 @@ const BentoGrid = () => {
           <TargetCard></TargetCard>
         </div>
 
-        <div 
+        <div
           className=" rounded-lg flex items-center justify-center
             col-span-1 row-span-1
             sm:col-span-1 sm:row-span-2
@@ -63,7 +64,7 @@ const BentoGrid = () => {
           <TeamMembersCard></TeamMembersCard>
         </div>
 
-        <div 
+        <div
           className="rounded-lg flex items-center justify-center
             col-span-1 row-span-1
             sm:col-span-2 sm:row-span-2
@@ -72,16 +73,16 @@ const BentoGrid = () => {
           <CompoudingCalculator></CompoudingCalculator>
         </div>
 
-        <div 
+        <div
           className=" rounded-lg flex items-center justify-center
             col-span-1 row-span-1
             sm:col-span-1 sm:row-span-2
             lg:col-span-1 lg:row-span-3"
         >
-         <LinkCard></LinkCard>
+          <LinkCard></LinkCard>
         </div>
 
-        <div 
+        <div
           className="rounded-lg flex items-center justify-center
             col-span-1 row-span-1
             sm:col-span-2 sm:row-span-2
@@ -90,7 +91,7 @@ const BentoGrid = () => {
           <TradesCard></TradesCard>
         </div>
 
-        <div 
+        <div
           className="rounded-lg flex items-center justify-center
             col-span-1 row-span-1
             sm:col-span-1 sm:row-span-2
