@@ -1,6 +1,6 @@
-'use client'
+"use client";
 import React from "react";
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter } from "next/navigation";
 import {
   Navbar,
   NavbarBrand,
@@ -10,8 +10,8 @@ import {
   NavbarContent,
   NavbarItem,
 } from "@nextui-org/navbar";
-import {Link} from "@nextui-org/link";
-import {Button} from "@nextui-org/button"
+import { Link } from "@nextui-org/link";
+import { Button } from "@nextui-org/button";
 
 export const AcmeLogo = () => {
   return (
@@ -39,31 +39,46 @@ export default function App() {
 
   // Handle navigation on logo or brand name click
   const navigateToHome = () => {
-    router.push('/');
+    router.push("/");
   };
 
   return (
-    <Navbar className="bg-black text-white" isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
+    <Navbar
+      className="bg-black text-white"
+      isBordered
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
+    >
       <NavbarContent className="sm:hidden" justify="start">
-        <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        />
       </NavbarContent>
 
       <NavbarContent className="sm:hidden pr-3 cursor-pointer" justify="center">
-        <NavbarBrand onClick={navigateToHome} style={{ cursor: 'pointer' }}>
+        <NavbarBrand onClick={navigateToHome} style={{ cursor: "pointer" }}>
           <AcmeLogo />
           <p className="font-bold text-purple-x text-inherit">HappyMo</p>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4 cursor-pointer justify-center items-center flex-grow" justify="center">
-        <NavbarBrand onClick={navigateToHome} style={{ cursor: 'pointer' }}>
+      <NavbarContent
+        className="hidden sm:flex gap-4 cursor-pointer justify-center items-center flex-grow"
+        justify="center"
+      >
+        <NavbarBrand onClick={navigateToHome} style={{ cursor: "pointer" }}>
           <AcmeLogo />
-          <p className="font-bold text-purple-x md:text-2xl text-inherit">HappyMo</p>
+          <p className="font-bold text-purple-x md:text-2xl text-inherit">
+            HappyMo
+          </p>
         </NavbarBrand>
         <div className="flex justify-center items-center flex-grow gap-3">
           {menuItems.map((item, index) => (
             <NavbarItem key={index}>
-              <Link className={`text-grey hover:text-white hover:font-bold cursor-pointer ${pathname === item.path ? 'font-bold' : ''}`} href={item.path}>
+              <Link
+                className={` text-2xl font-bold text-grey hover:text-white cursor-pointer ${pathname === item.path ? "font-bold" : ""}`}
+                href={item.path}
+              >
                 {item.name}
               </Link>
             </NavbarItem>
@@ -73,12 +88,24 @@ export default function App() {
 
       <NavbarContent justify="end">
         <NavbarItem className="hidden">
-          <Button as={Link} color="warning" href="/checkout" className="bg-login-button" variant="flat">
+          <Button
+            as={Link}
+            color="warning"
+            href="/checkout"
+            className="bg-login-button"
+            variant="flat"
+          >
             AI Indicator
           </Button>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="warning" className="bg-signup-button" href="https://i.bybit.com/269r1abS?action=inviteToCopy" variant="flat">
+          <Button
+            as={Link}
+            color="warning"
+            className="bg-signup-button"
+            href="https://i.bybit.com/269r1abS?action=inviteToCopy"
+            variant="flat"
+          >
             40x Start Now
           </Button>
         </NavbarItem>
@@ -88,7 +115,7 @@ export default function App() {
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item.name}-${index}`}>
             <Link
-              className={`w-full bg-custom-navbar text-white ${pathname === item.path ? 'font-bold' : ''}`}
+              className={`w-full bg-custom-navbar text-white ${pathname === item.path ? "font-bold" : ""}`}
               href={item.path}
               size="lg"
             >
@@ -100,4 +127,3 @@ export default function App() {
     </Navbar>
   );
 }
-
