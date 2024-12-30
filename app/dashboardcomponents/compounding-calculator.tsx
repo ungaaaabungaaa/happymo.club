@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, ChangeEvent } from "react";
 import {
   Line,
   LineChart,
@@ -12,17 +12,18 @@ import {
 } from "recharts";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ChartContainer } from "@/components/ui/chart";
-import { Slider } from "@nextui-org/slider";
-import { Input } from "@nextui-org/input";
+import { Slider } from "@/components/ui/slider";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export default function CompoundingCalculator() {
-  const [initialAmount, setInitialAmount] = useState<number>(500);
-  const [months, setMonths] = useState<any>(12);
+  const [initialAmount, setInitialAmount] = useState<string>("500");
+  const [months, setMonths] = useState<number[]>([12]);
 
   const calculateCompounding = useMemo(() => {
     const data = [];
-    let currentAmount = initialAmount;
-    const currentMonths = typeof months === "number" ? months : months[0];
+    let currentAmount = parseFloat(initialAmount) || 0;
+    const currentMonths = months[0];
 
     // Calculate monthly compound interest (1% daily = roughly 35% monthly)
     const monthlyRate = 0.35;
@@ -39,18 +40,20 @@ export default function CompoundingCalculator() {
 
   const finalAmount =
     calculateCompounding[calculateCompounding.length - 1].amount;
-  const totalProfit = finalAmount - initialAmount;
-  const roi = (((finalAmount - initialAmount) / initialAmount) * 100).toFixed(
-    2
-  );
+  const totalProfit = finalAmount - (parseFloat(initialAmount) || 0);
+  const roi = (
+    ((finalAmount - (parseFloat(initialAmount) || 0)) /
+      (parseFloat(initialAmount) || 1)) *
+    100
+  ).toFixed(2);
 
-  const handleMonthsChange = (value: any) => {
+  const handleMonthsChange = (value: number[]) => {
     setMonths(value);
   };
 
-  const handleAmountChange = (e: any) => {
-    const value = parseFloat(e.target.value);
-    if (!isNaN(value)) {
+  const handleAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (value === "" || /^\d*\.?\d*$/.test(value)) {
       setInitialAmount(value);
     }
   };
@@ -78,31 +81,31 @@ export default function CompoundingCalculator() {
         </CardHeader>
         <CardContent className="flex flex-col md:flex-row gap-6">
           <div className="w-full md:w-1/3 space-y-6">
-            <div className="bg-black">
-              <label htmlFor="initial" className="text-white">
+            <div className="space-y-2">
+              <Label htmlFor="initial" className="text-white">
                 Initial Investment
-              </label>
+              </Label>
               <Input
                 id="initial"
-                type="number"
-                value={initialAmount.toString()}
+                type="text"
+                inputMode="decimal"
+                value={initialAmount}
                 onChange={handleAmountChange}
-                className="bg-black text-white rounded-md pt-2"
+                className="bg-black text-white border-gray-700"
               />
             </div>
-            <div>
-              <label htmlFor="months-slider" className="text-gray-400">
+            <div className="space-y-2">
+              <Label htmlFor="months-slider" className="text-gray-400">
                 Number of Months
-              </label>
+              </Label>
               <Slider
                 id="months-slider"
+                min={1}
+                max={12}
                 step={1}
-                maxValue={12}
-                minValue={1}
-                defaultValue={12}
                 value={months}
-                onChange={handleMonthsChange}
-                className="max-w-md pt-2"
+                onValueChange={handleMonthsChange}
+                className="max-w-md"
               />
             </div>
             <div>
