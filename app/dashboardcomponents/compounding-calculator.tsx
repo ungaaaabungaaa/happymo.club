@@ -17,22 +17,25 @@ import { Input } from "@nextui-org/input";
 
 export default function CompoundingCalculator() {
   const [initialAmount, setInitialAmount] = useState<number>(500);
-  const [days, setDays] = useState<any>(365);
+  const [months, setMonths] = useState<any>(12);
 
   const calculateCompounding = useMemo(() => {
     const data = [];
     let currentAmount = initialAmount;
-    const currentDays = typeof days === "number" ? days : days[0];
+    const currentMonths = typeof months === "number" ? months : months[0];
 
-    for (let day = 0; day <= currentDays; day++) {
+    // Calculate monthly compound interest (1% daily = roughly 35% monthly)
+    const monthlyRate = 0.35;
+
+    for (let month = 0; month <= currentMonths; month++) {
       data.push({
-        day,
+        month,
         amount: parseFloat(currentAmount.toFixed(2)),
       });
-      currentAmount *= 1.01;
+      currentAmount *= 1 + monthlyRate;
     }
     return data;
-  }, [initialAmount, days]);
+  }, [initialAmount, months]);
 
   const finalAmount =
     calculateCompounding[calculateCompounding.length - 1].amount;
@@ -41,8 +44,8 @@ export default function CompoundingCalculator() {
     2
   );
 
-  const handleDaysChange = (value: any) => {
-    setDays(value);
+  const handleMonthsChange = (value: any) => {
+    setMonths(value);
   };
 
   const handleAmountChange = (e: any) => {
@@ -61,7 +64,9 @@ export default function CompoundingCalculator() {
               <h2 className="text-2xl font-semibold">
                 Copy Trading Calculator
               </h2>
-              <p className="text-sm text-gray-400">1% Daily Gains</p>
+              <p className="text-sm text-gray-400">
+                35% Monthly Gains (≈1% Daily)
+              </p>
             </div>
             <div className="text-right">
               <p className="text-sm text-gray-400">Final Amount</p>
@@ -86,17 +91,17 @@ export default function CompoundingCalculator() {
               />
             </div>
             <div>
-              <label htmlFor="days-slider" className="text-gray-400">
-                Number of Days
+              <label htmlFor="months-slider" className="text-gray-400">
+                Number of Months
               </label>
               <Slider
-                id="days-slider"
+                id="months-slider"
                 step={1}
-                maxValue={365}
+                maxValue={12}
                 minValue={1}
-                defaultValue={365}
-                value={days}
-                onChange={handleDaysChange}
+                defaultValue={12}
+                value={months}
+                onChange={handleMonthsChange}
                 className="max-w-md pt-2"
               />
             </div>
@@ -128,9 +133,9 @@ export default function CompoundingCalculator() {
                 >
                   <CartesianGrid strokeDasharray="3 3" stroke="#333" />
                   <XAxis
-                    dataKey="day"
+                    dataKey="month"
                     stroke="#666"
-                    tickFormatter={(value) => `Day ${value}`}
+                    tickFormatter={(value) => `Month ${value}`}
                   />
                   <YAxis
                     stroke="#666"
@@ -143,7 +148,7 @@ export default function CompoundingCalculator() {
                         return (
                           <div className="bg-gray-900 border border-gray-800 p-2 rounded-lg">
                             <p className="text-gray-400">
-                              Day {payload[0].payload.day}
+                              Month {payload[0].payload.month}
                             </p>
                             <p className="text-green-400 font-semibold">
                               ${amount.toLocaleString()}
