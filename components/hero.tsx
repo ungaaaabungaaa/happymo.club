@@ -2,7 +2,7 @@ import NavLink from "../components/navlink";
 
 const Hero = () => (
   <section>
-    <div className="custom-screen pt-4 py-12 text-white">
+    <div className="custom-screen pt-4 py-4 text-white">
       <div className="space-y-5 max-w-4xl mx-auto text-center">
         <h1 className="text-4xl text-white font-extrabold mx-auto sm:text-6xl">
           <span className="relative">

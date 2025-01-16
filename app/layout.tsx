@@ -2,10 +2,10 @@ import "@/styles/globals.css";
 
 import { Providers } from "./providers";
 import FAQ from "./components/faq";
-import Footer from "./components/footer"
+import Footer from "./components/footer";
 import Navbar from "./components/navbar";
-import Script from 'next/script'
-
+import Script from "next/script";
+import Head from "next/head";
 
 export const AcmeLogo = () => {
   return (
@@ -20,7 +20,6 @@ export const AcmeLogo = () => {
   );
 };
 
-
 export default function RootLayout({
   children,
 }: {
@@ -30,18 +29,20 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <head>
         <meta name="apple-mobile-web-app-title" content="HappyMo" />
+        <meta name="theme-color" content="#5350F2" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* You can also add additional structured data here if needed */}
       </head>
       <body>
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           <Navbar></Navbar>
-          <main>
-            {children}
-          </main>
+          <main>{children}</main>
           <FAQ></FAQ>
           <Footer></Footer>
         </Providers>
-        <Script 
-          src="//code.tidio.co/g6vp80m5v7zibf5aukkmlxxpc0yhjjwh.js" 
+        <Script
+          src="//code.tidio.co/g6vp80m5v7zibf5aukkmlxxpc0yhjjwh.js"
           strategy="lazyOnload"
         />
       </body>
